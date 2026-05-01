@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <!--
+        WARNING (may cascade to BREAKING) — renames the customer_id column to buyer_id.
+        Any running instance of the app that references customer_id will fail.
+        This requires a coordinated deployment with a rolling update window.
+        Contract Guardian should emit WARNING: rule column-renamed.
+
+        Safe pattern: add buyer_id nullable, copy data, update all code, drop customer_id.
+    -->
+    <changeSet id="5" author="vyndra">
+        <renameColumn tableName="orders"
+                      oldColumnName="customer_id"
+                      newColumnName="buyer_id"
+                      columnDataType="VARCHAR(100)"/>
+    </changeSet>
+
+</databaseChangeLog>
