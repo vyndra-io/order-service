@@ -10,11 +10,6 @@
       "doc": "Unique identifier of the order."
     },
     {
-      "name": "customerId",
-      "type": "string",
-      "doc": "Identifier of the customer who placed the order."
-    },
-    {
       "name": "totalAmount",
       "type": "double",
       "doc": "Total monetary value of the order."
