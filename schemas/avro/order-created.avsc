@@ -38,6 +38,11 @@
       "type": "long",
       "logicalType": "timestamp-millis",
       "doc": "Epoch milliseconds when the order was created."
+    },
+    {
+      "name": "discountCode",
+      "type": "string",
+      "doc": "Promotional discount code applied to the order. No default provided — BREAKING for BACKWARD compatibility."
     }
   ]
 }
