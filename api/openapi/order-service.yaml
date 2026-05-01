@@ -176,12 +176,16 @@ components:
   schemas:
     PlaceOrderRequest:
       type: object
-      required: [customerId, items]
+      required: [customerId, items, shippingAddress]
       properties:
         customerId:
           type: string
           description: Identifier of the customer placing the order
           example: cust-001
+        shippingAddress:
+          type: string
+          description: Delivery address for the order
+          example: "123 Main St, Springfield, IL 62701"
         items:
           type: array
           minItems: 1
