@@ -1,0 +1,43 @@
+{
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "namespace": "io.vyndra.order.event",
+  "doc": "Emitted when a new order is placed by a customer.",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "string",
+      "doc": "Unique identifier of the order."
+    },
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "Identifier of the customer who placed the order."
+    },
+    {
+      "name": "totalAmount",
+      "type": "double",
+      "doc": "Total monetary value of the order."
+    },
+    {
+      "name": "currency",
+      "type": "string",
+      "doc": "ISO 4217 currency code, e.g. USD."
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "OrderStatus",
+        "symbols": ["PENDING", "CONFIRMED", "SHIPPED", "DELIVERED", "CANCELLED"]
+      },
+      "doc": "Status of the order at the time of the event."
+    },
+    {
+      "name": "createdAt",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Epoch milliseconds when the order was created."
+    }
+  ]
+}

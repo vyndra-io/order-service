@@ -1,0 +1,33 @@
+{
+  "type": "record",
+  "name": "ShipmentStatusUpdatedEvent",
+  "namespace": "io.vyndra.shipping.event",
+  "doc": "Consumed by the order service to track shipment progress. Schema owned by shipping-service.",
+  "fields": [
+    {
+      "name": "shipmentId",
+      "type": "string",
+      "doc": "Unique identifier of the shipment."
+    },
+    {
+      "name": "orderId",
+      "type": "string",
+      "doc": "Identifier of the order associated with this shipment."
+    },
+    {
+      "name": "status",
+      "type": {
+        "type": "enum",
+        "name": "ShipmentStatus",
+        "symbols": ["CREATED", "DISPATCHED", "IN_TRANSIT", "OUT_FOR_DELIVERY", "DELIVERED", "FAILED"]
+      },
+      "doc": "Current status of the shipment."
+    },
+    {
+      "name": "updatedAt",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Epoch milliseconds when the status was updated."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "type": "record",
+  "name": "OrderCancelledEvent",
+  "namespace": "io.vyndra.order.event",
+  "doc": "Emitted when an order is cancelled.",
+  "fields": [
+    {
+      "name": "orderId",
+      "type": "string",
+      "doc": "Unique identifier of the cancelled order."
+    },
+    {
+      "name": "customerId",
+      "type": "string",
+      "doc": "Identifier of the customer whose order was cancelled."
+    },
+    {
+      "name": "reason",
+      "type": "string",
+      "doc": "Human-readable reason for the cancellation."
+    },
+    {
+      "name": "cancelledAt",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Epoch milliseconds when the order was cancelled."
+    }
+  ]
+}
