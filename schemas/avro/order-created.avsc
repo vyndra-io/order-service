@@ -38,6 +38,12 @@
       "type": "long",
       "logicalType": "timestamp-millis",
       "doc": "Epoch milliseconds when the order was created."
+    },
+    {
+      "name": "priority",
+      "type": "string",
+      "default": "STANDARD",
+      "doc": "Order priority. Defaults to STANDARD for backward compatibility with old messages."
     }
   ]
 }
