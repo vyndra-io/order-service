@@ -2,7 +2,7 @@
   "type": "record",
   "name": "OrderCreatedEvent",
   "namespace": "io.vyndra.order.event",
-  "doc": "Emitted when a new order is placed by a customer.",
+  "doc": "Emitted when a new order is placed by a customer. V3 candidate: removes currency, adds required region.",
   "fields": [
     {
       "name": "orderId",
@@ -20,11 +20,6 @@
       "doc": "Total monetary value of the order."
     },
     {
-      "name": "currency",
-      "type": "string",
-      "doc": "ISO 4217 currency code, e.g. USD."
-    },
-    {
       "name": "status",
       "type": {
         "type": "enum",
@@ -38,6 +33,11 @@
       "type": "long",
       "logicalType": "timestamp-millis",
       "doc": "Epoch milliseconds when the order was created."
+    },
+    {
+      "name": "region",
+      "type": "string",
+      "doc": "Geographic region for the order. No default — REQUIRED. N-2 BREAKING: v1 had no region field at all."
     }
   ]
 }

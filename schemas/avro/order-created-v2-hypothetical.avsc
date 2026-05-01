@@ -1,0 +1,15 @@
+{
+  "type": "record",
+  "name": "OrderCreatedEvent",
+  "namespace": "io.vyndra.order.event",
+  "doc": "Hypothetical v2 state: region was added as nullable in v2 (on main already). This file is here for documentation of the N-2 scenario only.",
+  "fields": [
+    {"name": "orderId", "type": "string"},
+    {"name": "customerId", "type": "string"},
+    {"name": "totalAmount", "type": "double"},
+    {"name": "currency", "type": "string"},
+    {"name": "status", "type": {"type": "enum", "name": "OrderStatus", "symbols": ["PENDING", "CONFIRMED", "SHIPPED", "DELIVERED", "CANCELLED"]}},
+    {"name": "createdAt", "type": "long", "logicalType": "timestamp-millis"},
+    {"name": "region", "type": ["null", "string"], "default": null}
+  ]
+}
