@@ -254,6 +254,10 @@ components:
           type: string
           format: date-time
           description: Timestamp when the order was last updated
+        notes:
+          type: string
+          description: Optional customer notes for the order
+          example: "Please leave at the front door"
 
     OrderItemResponse:
       type: object
