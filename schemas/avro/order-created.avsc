@@ -16,8 +16,8 @@
     },
     {
       "name": "totalAmount",
-      "type": "double",
-      "doc": "Total monetary value of the order."
+      "type": "string",
+      "doc": "Total monetary value as formatted string, e.g. '149.97 USD'. TYPE CHANGED from double — BREAKING."
     },
     {
       "name": "currency",
