@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <!--
+        SAFE CHANGE — adds a nullable column with no default required.
+        Existing rows remain valid (column is NULL). Old app versions can still
+        INSERT without providing notes. New app versions can start writing notes.
+        Contract Guardian should PASS this PR.
+    -->
+    <changeSet id="5" author="vyndra">
+        <addColumn tableName="orders">
+            <column name="notes" type="TEXT" remarks="Optional customer notes for the order"/>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
