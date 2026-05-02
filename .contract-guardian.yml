@@ -49,3 +49,9 @@ rules:
 
 gate:
   block-on: breaking
+  # Approval override: an authorised approver can apply the schema-override label
+  # to a PR to downgrade a FAIL verdict to WARN, unblocking the merge.
+  approval-required-to-bypass: true
+  approval-label: "schema-override"
+  approvers:
+    - gunnervj
