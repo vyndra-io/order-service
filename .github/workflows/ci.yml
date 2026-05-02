@@ -56,7 +56,7 @@ jobs:
 
       - name: Build Contract Guardian
         run: |
-          git clone --branch nminus-compatibility \
+          git clone --branch approval-override \
             https://github.com/vyndra-io/contract-guardian.git /tmp/cg
           cd /tmp/cg && mvn package -DskipTests -q \
             -Dmaven.repo.local=/tmp/cg/.m2
