@@ -38,6 +38,12 @@
       "type": "long",
       "logicalType": "timestamp-millis",
       "doc": "Epoch milliseconds when the order was created."
+    },
+    {
+      "name": "region",
+      "type": ["null", "string"],
+      "default": null,
+      "doc": "Geographic region for the order. Nullable with null default — safe v2 migration step. After all consumers adopt region, we plan to make it required."
     }
   ]
 }
