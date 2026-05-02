@@ -34,6 +34,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write   # required to post the PR comment
+      contents: read
     steps:
       - uses: actions/checkout@v4
         with:
