@@ -6,5 +6,6 @@
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
 
     <include file="db/changelog/changes/V1__create_orders.xml"/>
+    <include file="db/changelog/changes/V2__add_region_notnull.xml"/>
 
 </databaseChangeLog>
