@@ -97,41 +97,6 @@ paths:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
 
-    delete:
-      tags: [Orders]
-      operationId: cancelOrder
-      summary: Cancel an order
-      description: |
-        Cancels the order if it has not yet been shipped.
-        Emits an order-cancelled event on success.
-      parameters:
-        - name: id
-          in: path
-          required: true
-          description: The order UUID
-          schema:
-            type: string
-            format: uuid
-      responses:
-        "200":
-          description: Order cancelled successfully
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/OrderResponse'
-        "400":
-          description: Order cannot be cancelled in its current state
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-        "404":
-          description: Order not found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/ErrorResponse'
-
   /orders/{id}/status:
     patch:
       tags: [Orders]
