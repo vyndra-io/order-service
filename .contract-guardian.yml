@@ -54,4 +54,4 @@ gate:
   approval-required-to-bypass: true
   approval-label: "schema-override"
   approvers:
-    - vyndra-platform
+    - gunner-vj
