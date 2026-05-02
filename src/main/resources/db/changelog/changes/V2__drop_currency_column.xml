@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <!--
+        BREAKING CHANGE — drops the currency column from the orders table.
+        Any JPA entity or query referencing this column will fail at runtime.
+        Contract Guardian should FAIL: rule column-removed.
+
+        Fix: deprecate column usage first, migrate all consumers, then drop.
+    -->
+    <changeSet id="5" author="vyndra">
+        <dropColumn tableName="orders" columnName="currency"/>
+    </changeSet>
+
+</databaseChangeLog>
