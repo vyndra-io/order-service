@@ -237,15 +237,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/OrderItemResponse'
-        totalAmount:
-          type: number
-          format: double
-          description: Total order value
-          example: 149.97
-        currency:
-          type: string
-          description: ISO 4217 currency code
-          example: USD
         createdAt:
           type: string
           format: date-time
